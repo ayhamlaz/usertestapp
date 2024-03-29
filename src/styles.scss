@@ -1,1 +1,219 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+   --shadow: #95959599;
+   --light: #e1edfb;
+   --primary: #0d6efd;
+   --lighter-primary: #2d8efd;
+   --trans-primary: #2d8efd55;
+}
+
+/* Sizing */
+
+.max-width {
+   max-width: 650px;
+}
+
+/* Loader */
+.loader {
+   width: 48px;
+   height: 48px;
+   border: 5px solid var(--primary);
+   border-bottom-color: transparent;
+   border-radius: 50%;
+   display: inline-block;
+   box-sizing: border-box;
+   animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+/* Header */
+
+.navbar {
+   height: 65px;
+}
+
+.nav-shadow {
+   box-shadow: 0px 5px 15px 2px var(--shadow);
+}
+
+.bg-linear-primary {
+   background: linear-gradient(var(--primary), var(--lighter-primary), var(--primary)) !important;
+}
+
+nav {
+   .back {
+      position: absolute;
+      right: 10px;
+   }
+}
+
+.search-bar {
+   width: 300px;
+   position: absolute;
+   left: calc(50% - 150px);
+
+   input {
+      font-size: 20px;
+      font-weight: 700;
+      border: 2px solid var(--trans-primary);
+      border-radius: 15px !important;
+      padding: 7px 20px;
+      transition: 0.3s;
+      width: 100%;
+      background-color: var(--shadow);
+   }
+
+   input::placeholder {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--light);
+   }
+
+   input:focus,
+   input:hover {
+      outline: none;
+      border: 2px solid var(--light);
+   }
+
+   span {
+      border: 0;
+      padding: 0;
+      margin-inline-start: -30px;
+      background: none;
+   }
+}
+
+.resulte {
+   position: absolute !important;
+   width: 350px !important;
+   height: 100px !important;
+   left: calc(50% - 175px) !important;
+   top: 80px !important;
+   border-radius: 30px !important;
+   background-color: var(--light) !important;
+   z-index: 9 !important;
+   box-shadow: 0 0 20px var(--shadow);
+
+   .card-body {
+      padding: 10px;
+      cursor: pointer;
+
+      .card-img {
+         border-radius: 10px;
+
+         img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+         }
+      }
+   }
+}
+
+/* Home */
+
+.heading {
+   h2 {
+      text-align: center;
+      text-shadow: 0 0 2px var(--lighter-primary);
+      border-bottom: 2px solid var(--trans-primary);
+      padding-bottom: 5px;
+   }
+}
+
+.users {
+
+   .card {
+      border-radius: 15px !important;
+      box-shadow: 0px 0px 4px 1px #959595;
+      cursor: pointer;
+      transition: 200ms;
+
+      .card-body {
+         background-color: #edf2fc;
+         border-radius: 15px !important;
+         padding: 0;
+
+         .card-img {
+            border-start-start-radius: 15px;
+            border-start-end-radius: 15px;
+            box-shadow: 0px 2px 4px 1px #959595;
+
+            img {
+               width: 100%;
+               border-start-start-radius: 14px;
+               border-start-end-radius: 14px;
+               object-fit: cover;
+               aspect-ratio: 1/1;
+            }
+         }
+
+         h6 {
+            text-align: center;
+            margin-block: 7px;
+            margin-inline: auto;
+         }
+      }
+   }
+
+   .card:hover {
+      opacity: 0.8;
+      scale: 1.03;
+      transition: 200ms;
+   }
+}
+
+.more {
+   .btn {
+      border-radius: 50%;
+      border: 2px solid;
+      line-height: 1px;
+      font-size: 30px;
+      font-weight: 700;
+      width: 60px;
+      aspect-ratio: 1/1 !important;
+   }
+}
+
+/* Profile */
+.profile-container {
+   width: 100%;
+   box-shadow: 0 0 10px var(--shadow);
+   border-radius: 20px;
+   border: 2px solid var(--trans-primary);
+   padding-block: 15px;
+   padding-inline: 5px;
+
+   .profile-img {
+      border-radius: 20px;
+      border: 2px solid var(--trans-primary);
+      box-shadow: 0px 0px 4px #959595;
+
+      img {
+         width: 100%;
+         border-radius: 18px;
+         object-fit: cover;
+         aspect-ratio: 1/1;
+      }
+   }
+
+   .back {
+      button {
+         border: 2px solid;
+         border-radius: 20px;
+         height: 50px;
+         float: inline-end;
+         font-size: 20px;
+         font-weight: 600;
+      }
+   }
+}

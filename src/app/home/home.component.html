@@ -1,0 +1,29 @@
+<section class="container p-md-5">
+
+   <div class="mt-5">
+
+      <div class="row heading max-width mx-auto">
+         <h2>Users</h2>
+      </div>
+
+      <div class="row max-width mx-auto users">
+         <div class="col-6 col-md-4" *ngFor="let user of users">
+            <div class="card border-primary border-2 mx-auto my-3" @visibility routerLink="/profile/{{user.id}}">
+               <div class="card-body">
+                  <div class="card-img">
+                     <img src="{{user.avatar}}">
+                  </div>
+                  <h6>{{user.first_name}} {{user.last_name}}</h6>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="more mt-3 mb-5 d-flex">
+         <button class="btn btn-outline-primary mx-auto" @visibility *ngIf="!loading && (nextPage <= total_pages)" (click)="moreUsers()">+</button>
+         <span class="loader mx-auto" *ngIf="loading" @visibility></span>
+      </div>
+
+   </div>
+
+</section>

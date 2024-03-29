@@ -1,0 +1,32 @@
+<section class="container p-md-5">
+
+   <div class="mt-5">
+      <div class="row heading max-width mx-auto">
+         <h2>Profile</h2>
+      </div>
+
+      <div class="profile-container row max-width mx-auto mt-3" @visibility>
+         <div class="col-6 col-md-4" *ngIf="user" @flyInOut>
+            <div class="profile-img">
+               <img src="{{user.avatar}}">
+            </div>
+         </div>
+         <div class="col-12 col-md-8 p-4 p-md-3" *ngIf="user" @flyInOut>
+            <h6><b class="text-primary">User id : </b>{{user.id}}</h6>
+            <h6><b class="text-primary">First Name : </b>{{user.first_name}}</h6>
+            <h6><b class="text-primary">Last Name : </b>{{user.last_name}}</h6>
+            <h6><b class="text-primary">Email : </b>{{user.email}}</h6>
+         </div>
+         <div class="col-12 d-flex" *ngIf="!user" @flyInOut>
+            <span class="loader mx-auto"></span>
+         </div>
+         <div class="col-12 mt-3 back">
+            <button class="btn btn-outline-primary" routerLink="/home">
+               Back <i class="mdi mdi-chevron-right"></i>
+            </button>
+         </div>
+      </div>
+
+   </div>
+
+</section>
